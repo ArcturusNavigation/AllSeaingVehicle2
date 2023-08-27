@@ -1,0 +1,12 @@
+[submodule "src/velodyne"]
+	path = src/velodyne
+	url = https://github.com/ros-drivers/velodyne.git
+	branch = humble-devel
+[submodule "velodyne"]
+	path = velodyne
+	url = https://github.com/ros-drivers/velodyne.git
+	branch = humble-devel
+[submodule "src/--force"]
+	path = src/--force
+	url = https://github.com/ros-drivers/velodyne.git
+	branch = humble-devel
