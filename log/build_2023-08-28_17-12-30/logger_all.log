@@ -1,0 +1,323 @@
+[1.141s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.141s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff80745420>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff80fb0d60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff80fb0d60>>)
+[1.258s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.258s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.258s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.258s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.258s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.259s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.259s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/arcturus/Documents/AllSeaingVehicle2'
+[1.259s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.260s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.260s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.260s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.260s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.260s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.261s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.261s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.261s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['ignore', 'ignore_ament_install']
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'ignore'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'ignore_ament_install'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['colcon_pkg']
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'colcon_pkg'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['colcon_meta']
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'colcon_meta'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['ros']
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'ros'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['cmake', 'python']
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'cmake'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'python'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extensions ['python_setup_py']
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne) by extension 'python_setup_py'
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extensions ['ignore', 'ignore_ament_install']
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extension 'ignore'
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extension 'ignore_ament_install'
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extensions ['colcon_pkg']
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extension 'colcon_pkg'
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extensions ['colcon_meta']
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extension 'colcon_meta'
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extensions ['ros']
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne) by extension 'ros'
+[1.324s] DEBUG:colcon.colcon_core.package_identification:Package 'src/velodyne/velodyne' with type 'ros.ament_cmake' and name 'velodyne'
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extensions ['ignore', 'ignore_ament_install']
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extension 'ignore'
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extension 'ignore_ament_install'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extensions ['colcon_pkg']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extension 'colcon_pkg'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extensions ['colcon_meta']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extension 'colcon_meta'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extensions ['ros']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_driver) by extension 'ros'
+[1.330s] DEBUG:colcon.colcon_core.package_identification:Package 'src/velodyne/velodyne_driver' with type 'ros.ament_cmake' and name 'velodyne_driver'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extensions ['ignore', 'ignore_ament_install']
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extension 'ignore'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extension 'ignore_ament_install'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extensions ['colcon_pkg']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extension 'colcon_pkg'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extensions ['colcon_meta']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extension 'colcon_meta'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extensions ['ros']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_laserscan) by extension 'ros'
+[1.335s] DEBUG:colcon.colcon_core.package_identification:Package 'src/velodyne/velodyne_laserscan' with type 'ros.ament_cmake' and name 'velodyne_laserscan'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extensions ['ignore', 'ignore_ament_install']
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extension 'ignore'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extension 'ignore_ament_install'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extensions ['colcon_pkg']
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extension 'colcon_pkg'
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extensions ['colcon_meta']
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extension 'colcon_meta'
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extensions ['ros']
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_msgs) by extension 'ros'
+[1.340s] DEBUG:colcon.colcon_core.package_identification:Package 'src/velodyne/velodyne_msgs' with type 'ros.ament_cmake' and name 'velodyne_msgs'
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extensions ['ignore', 'ignore_ament_install']
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extension 'ignore'
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extension 'ignore_ament_install'
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extensions ['colcon_pkg']
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extension 'colcon_pkg'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extensions ['colcon_meta']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extension 'colcon_meta'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extensions ['ros']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/velodyne/velodyne_pointcloud) by extension 'ros'
+[1.347s] DEBUG:colcon.colcon_core.package_identification:Package 'src/velodyne/velodyne_pointcloud' with type 'ros.ament_cmake' and name 'velodyne_pointcloud'
+[1.348s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.348s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.348s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.348s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.348s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.433s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.434s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.448s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 271 installed packages in /opt/ros/humble
+[1.453s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.679s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_args' from command line to 'None'
+[1.679s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_target' from command line to 'None'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_clean_cache' from command line to 'False'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_clean_first' from command line to 'False'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'cmake_force_configure' from command line to 'False'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'ament_cmake_args' from command line to 'None'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'catkin_cmake_args' from command line to 'None'
+[1.680s] Level 5:colcon.colcon_core.verb:set package 'velodyne_laserscan' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.680s] DEBUG:colcon.colcon_core.verb:Building package 'velodyne_laserscan' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan', 'merge_install': False, 'path': '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan', 'symlink_install': True, 'test_result_base': None}
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_args' from command line to 'None'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_target' from command line to 'None'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[1.684s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[1.685s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[1.685s] Level 5:colcon.colcon_core.verb:set package 'velodyne_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.685s] DEBUG:colcon.colcon_core.verb:Building package 'velodyne_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs', 'merge_install': False, 'path': '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_msgs', 'symlink_install': True, 'test_result_base': None}
+[1.688s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_args' from command line to 'None'
+[1.688s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_target' from command line to 'None'
+[1.688s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.688s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[1.688s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_clean_first' from command line to 'False'
+[1.689s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'cmake_force_configure' from command line to 'False'
+[1.689s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'ament_cmake_args' from command line to 'None'
+[1.689s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[1.689s] Level 5:colcon.colcon_core.verb:set package 'velodyne_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.689s] DEBUG:colcon.colcon_core.verb:Building package 'velodyne_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver', 'merge_install': False, 'path': '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_driver', 'symlink_install': True, 'test_result_base': None}
+[1.692s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_args' from command line to 'None'
+[1.692s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_target' from command line to 'None'
+[1.692s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.692s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_clean_cache' from command line to 'False'
+[1.693s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_clean_first' from command line to 'False'
+[1.693s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'cmake_force_configure' from command line to 'False'
+[1.693s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'ament_cmake_args' from command line to 'None'
+[1.693s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'catkin_cmake_args' from command line to 'None'
+[1.693s] Level 5:colcon.colcon_core.verb:set package 'velodyne_pointcloud' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.693s] DEBUG:colcon.colcon_core.verb:Building package 'velodyne_pointcloud' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_pointcloud', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_pointcloud', 'merge_install': False, 'path': '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_pointcloud', 'symlink_install': True, 'test_result_base': None}
+[1.696s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_args' from command line to 'None'
+[1.696s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_target' from command line to 'None'
+[1.696s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.696s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_clean_cache' from command line to 'False'
+[1.697s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_clean_first' from command line to 'False'
+[1.697s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'cmake_force_configure' from command line to 'False'
+[1.697s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'ament_cmake_args' from command line to 'None'
+[1.697s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'catkin_cmake_args' from command line to 'None'
+[1.697s] Level 5:colcon.colcon_core.verb:set package 'velodyne' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.697s] DEBUG:colcon.colcon_core.verb:Building package 'velodyne' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne', 'merge_install': False, 'path': '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne', 'symlink_install': True, 'test_result_base': None}
+[1.699s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.709s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.710s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_msgs' with build type 'ament_cmake'
+[1.712s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_msgs'
+[1.728s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.729s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.729s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.747s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan' with build type 'ament_cmake'
+[1.748s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan'
+[1.756s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.756s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.801s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs -- -j4 -l4
+[1.817s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan -- -j4 -l4
+[2.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan -- -j4 -l4
+[2.658s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan
+[3.497s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs -- -j4 -l4
+[3.635s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(velodyne_laserscan)
+[3.642s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan
+[3.665s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan' for CMake module files
+[3.668s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan' for CMake config files
+[3.671s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_laserscan', 'cmake_prefix_path')
+[3.678s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.ps1'
+[3.680s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.dsv'
+[3.682s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.sh'
+[3.686s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib'
+[3.687s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_laserscan', 'ld_library_path_lib')
+[3.691s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.ps1'
+[3.693s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.dsv'
+[3.694s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.sh'
+[3.696s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/bin'
+[3.696s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib/pkgconfig/velodyne_laserscan.pc'
+[3.697s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib/python3.10/site-packages'
+[3.698s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/bin'
+[3.703s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.ps1'
+[3.706s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.dsv'
+[3.708s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.sh'
+[3.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.bash'
+[3.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.zsh'
+[3.717s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/colcon-core/packages/velodyne_laserscan)
+[3.850s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(velodyne_laserscan)
+[3.861s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan' for CMake module files
+[3.864s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan' for CMake config files
+[3.866s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_laserscan', 'cmake_prefix_path')
+[3.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.ps1'
+[3.873s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.dsv'
+[3.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/cmake_prefix_path.sh'
+[3.884s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib'
+[3.885s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_laserscan', 'ld_library_path_lib')
+[3.891s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.ps1'
+[3.893s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.dsv'
+[3.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/hook/ld_library_path_lib.sh'
+[3.896s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/bin'
+[3.896s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib/pkgconfig/velodyne_laserscan.pc'
+[3.897s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/lib/python3.10/site-packages'
+[3.898s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/bin'
+[3.903s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.ps1'
+[3.905s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.dsv'
+[3.907s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.sh'
+[3.909s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.bash'
+[3.910s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/velodyne_laserscan/package.zsh'
+[3.912s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan/share/colcon-core/packages/velodyne_laserscan)
+[3.928s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs
+[4.255s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(velodyne_msgs)
+[4.265s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs' for CMake module files
+[4.271s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_msgs
+[4.275s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs' for CMake config files
+[4.278s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_msgs', 'cmake_prefix_path')
+[4.286s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.ps1'
+[4.289s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.dsv'
+[4.291s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.sh'
+[4.294s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib'
+[4.294s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_msgs', 'ld_library_path_lib')
+[4.299s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.ps1'
+[4.301s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.dsv'
+[4.302s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.sh'
+[4.303s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/bin'
+[4.304s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib/pkgconfig/velodyne_msgs.pc'
+[4.304s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib/python3.10/site-packages'
+[4.305s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/bin'
+[4.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.ps1'
+[4.312s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.dsv'
+[4.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.sh'
+[4.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.bash'
+[4.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.zsh'
+[4.318s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/colcon-core/packages/velodyne_msgs)
+[4.713s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(velodyne_msgs)
+[4.722s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs' for CMake module files
+[4.727s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs' for CMake config files
+[4.730s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_msgs', 'cmake_prefix_path')
+[4.735s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.ps1'
+[4.740s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.dsv'
+[4.741s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/cmake_prefix_path.sh'
+[4.744s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib'
+[4.744s] Level 1:colcon.colcon_core.shell:create_environment_hook('velodyne_msgs', 'ld_library_path_lib')
+[4.750s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.ps1'
+[4.752s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.dsv'
+[4.754s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/hook/ld_library_path_lib.sh'
+[4.757s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/bin'
+[4.758s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib/pkgconfig/velodyne_msgs.pc'
+[4.759s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib/python3.10/site-packages'
+[4.760s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/bin'
+[4.768s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.ps1'
+[4.770s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.dsv'
+[4.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.sh'
+[4.775s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.bash'
+[4.776s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/velodyne_msgs/package.zsh'
+[4.778s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/share/colcon-core/packages/velodyne_msgs)
+[4.779s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_driver' with build type 'ament_cmake'
+[4.780s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_driver'
+[4.785s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.786s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.804s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_pointcloud' with build type 'ament_cmake'
+[4.804s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_pointcloud'
+[4.813s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.814s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.849s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver
+[4.876s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_pointcloud': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_pointcloud -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_pointcloud
+[10.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver' returned '0': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver
+[10.274s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver -- -j4 -l4
+[11.895s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_pointcloud' returned '0': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_pointcloud -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_pointcloud
+[11.897s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_pointcloud': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_pointcloud -- -j4 -l4
+[29.710s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver' returned '2': AMENT_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_driver -- -j4 -l4
+[30.345s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(velodyne_driver)
+[30.358s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver' for CMake module files
+[30.360s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver' for CMake config files
+[30.361s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/bin'
+[30.361s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/lib/pkgconfig/velodyne_driver.pc'
+[30.362s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/lib/python3.10/site-packages'
+[30.362s] Level 1:colcon.colcon_core.environment:checking '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/bin'
+[30.392s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/velodyne_driver/package.ps1'
+[30.395s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/velodyne_driver/package.dsv'
+[30.397s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/velodyne_driver/package.sh'
+[30.398s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/velodyne_driver/package.bash'
+[30.401s] INFO:colcon.colcon_core.shell:Creating package script '/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/velodyne_driver/package.zsh'
+[30.403s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_driver/share/colcon-core/packages/velodyne_driver)
+[140.210s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[140.211s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[140.211s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[140.212s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[140.239s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[140.240s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[140.240s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[140.240s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[140.340s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[140.357s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arcturus/Documents/AllSeaingVehicle2/install/local_setup.ps1'
+[140.361s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/arcturus/Documents/AllSeaingVehicle2/install/_local_setup_util_ps1.py'
+[140.366s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arcturus/Documents/AllSeaingVehicle2/install/setup.ps1'
+[140.371s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arcturus/Documents/AllSeaingVehicle2/install/local_setup.sh'
+[140.374s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/arcturus/Documents/AllSeaingVehicle2/install/_local_setup_util_sh.py'
+[140.376s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arcturus/Documents/AllSeaingVehicle2/install/setup.sh'
+[140.383s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arcturus/Documents/AllSeaingVehicle2/install/local_setup.bash'
+[140.385s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arcturus/Documents/AllSeaingVehicle2/install/setup.bash'
+[140.390s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arcturus/Documents/AllSeaingVehicle2/install/local_setup.zsh'
+[140.392s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arcturus/Documents/AllSeaingVehicle2/install/setup.zsh'

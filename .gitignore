@@ -3,10 +3,11 @@ install/
 logs/
 build/
 *.bag
+COLCON_IGNORE
 
 # VSCode
 .vscode
 
 # Miscellaneous
 *.deb
-*.DS_Store
+.DS_Store

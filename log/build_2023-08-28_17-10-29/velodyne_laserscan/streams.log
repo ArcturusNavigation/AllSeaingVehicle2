@@ -1,0 +1,58 @@
+[0.072s] Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan
+[0.536s] -- The C compiler identification is GNU 11.4.0
+[0.821s] -- The CXX compiler identification is GNU 11.4.0
+[0.857s] -- Detecting C compiler ABI info
+[1.192s] -- Detecting C compiler ABI info - done
+[1.236s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.237s] -- Detecting C compile features
+[1.239s] -- Detecting C compile features - done
+[1.253s] -- Detecting CXX compiler ABI info
+[1.737s] -- Detecting CXX compiler ABI info - done
+[1.771s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.773s] -- Detecting CXX compile features
+[1.775s] -- Detecting CXX compile features - done
+[1.785s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.534s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[2.793s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[2.895s] -- Found rclcpp: 16.0.5 (/opt/ros/humble/share/rclcpp/cmake)
+[3.076s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.098s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.133s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[3.199s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.293s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.603s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[3.612s] -- Found rmw_fastrtps_cpp: 6.2.3 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[4.023s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[4.138s] -- Found FastRTPS: /opt/ros/humble/include  
+[4.476s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.478s] -- Looking for pthread.h
+[4.850s] -- Looking for pthread.h - found
+[4.852s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[5.264s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[5.270s] -- Found Threads: TRUE  
+[5.915s] -- Found rclcpp_components: 16.0.5 (/opt/ros/humble/share/rclcpp_components/cmake)
+[6.154s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[6.625s] -- Found ament_lint_auto: 0.12.7 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.976s] -- Added test 'copyright' to check source files copyright and LICENSE
+[6.986s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[6.987s] -- Configured cppcheck include dirs: /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan/include
+[6.987s] -- Configured cppcheck exclude dirs and/or files: 
+[6.996s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[6.997s] -- Configured cpplint exclude dirs and/or files: 
+[6.999s] -- Added test 'flake8' to check Python code syntax and style conventions
+[7.003s] -- Added test 'lint_cmake' to check CMake code style
+[7.006s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[7.016s] -- Added test 'uncrustify' to check C / C++ code style
+[7.019s] -- Configured uncrustify additional arguments: 
+[7.020s] -- Added test 'xmllint' to check XML markup files
+[7.027s] -- Configuring done
+[7.112s] -- Generating done
+[7.120s] -- Build files have been written to: /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan
+[7.180s] Invoked command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/arcturus/Documents/AllSeaingVehicle2/src/velodyne/velodyne_laserscan -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arcturus/Documents/AllSeaingVehicle2/install/velodyne_laserscan
+[7.182s] Invoking command in '/home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arcturus/Documents/AllSeaingVehicle2/build/velodyne_laserscan -- -j4 -l4
+[7.409s] [ 25%] [32mBuilding CXX object CMakeFiles/velodyne_laserscan.dir/src/velodyne_laserscan.cpp.o[0m
+[46.949s] [ 50%] [32m[1mLinking CXX shared library libvelodyne_laserscan.so[0m
+[48.542s] [ 50%] Built target velodyne_laserscan
+[48.636s] [ 75%] [32mBuilding CXX object CMakeFiles/velodyne_laserscan_node.dir/src/node.cpp.o[0m
+[60.337s] [100%] [32m[1mLinking CXX executable velodyne_laserscan_node[0m
+[61.467s] [100%] Built target velodyne_laserscan_node
