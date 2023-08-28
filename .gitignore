@@ -1,0 +1,12 @@
+# ROS
+install/
+logs/
+build/
+*.bag
+
+# VSCode
+.vscode
+
+# Miscellaneous
+*.deb
+*.DS_Store
