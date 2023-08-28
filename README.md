@@ -8,13 +8,21 @@
 - Docker and [Distrobox](https://github.com/89luca89/distrobox) (if Ubuntu 22.04 is not available, e.g. on Jetson devices)
 - ZED SDK (only install on Jetson devices)
 
+If Ubuntu 22.04 is needed, install Distrobox and run 
+
+```
+distrobox create -i ubuntu:22.04
+```
+
+to create an Ubuntu 22.04 environment. You can now enter the Ubuntu 22.04 environment by running `distrobox enter <name-of-env>` and exit by running `exit`.
+
 The Velodyne LiDAR drivers also require the following packages:
 
 ```
 sudo apt install libpcap-dev ros-humble-diagnostic-updater
 ```
 
-To download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
+Finally, to download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
 
 ```
 curl -L https://download.stereolabs.com/zedsdk/3.8/l4t32.6/jetsons -o installer.run # Replace link with https://download.stereolabs.com/zedsdk/3.8/cu117/ubuntu20 if using docker
