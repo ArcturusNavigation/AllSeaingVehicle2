@@ -1,6 +1,6 @@
 # ROS
 install/
-logs/
+log/
 build/
 *.bag
 COLCON_IGNORE
