@@ -11,10 +11,10 @@
 If Ubuntu 22.04 is needed, install Distrobox and run 
 
 ```
-distrobox create -i ubuntu:22.04
+distrobox create --nvidia -i ubuntu:22.04
 ```
 
-to create an Ubuntu 22.04 environment. You can now enter the Ubuntu 22.04 environment by running `distrobox enter <name-of-env>` and exit by running `exit`.
+to create an Ubuntu 22.04 environment with the NVIDIA GPU. You can now enter the Ubuntu 22.04 environment by running `distrobox enter <name-of-env>` and exit by running `exit`.
 
 The Velodyne LiDAR drivers also require the following packages:
 
@@ -25,7 +25,7 @@ sudo apt install libpcap-dev ros-humble-diagnostic-updater
 Finally, to download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
 
 ```
-curl -L https://download.stereolabs.com/zedsdk/3.8/l4t32.6/jetsons -o installer.run # Replace link with https://download.stereolabs.com/zedsdk/3.8/cu117/ubuntu20 if using docker
+curl -L https://download.stereolabs.com/zedsdk/4.0/l4t35.3/jetsons
 chmod +x installer.run 
 ```
 
@@ -40,6 +40,18 @@ On a Jetson device, you also need to create an alias to the path for opencv
 
 ```
 sudo ln -s /usr/include/opencv4/opencv2 /usr/include/opencv 
+```
+
+### Cloning the repository
+
+```
+git clone https://github.com/ArcturusNavigation/AllSeaingVehicle2.git
+```
+
+Update the submodules:
+
+```
+git submodule update --init --recursive
 ```
 
 ## Building repository
