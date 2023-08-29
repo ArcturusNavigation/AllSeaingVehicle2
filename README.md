@@ -49,6 +49,12 @@ First, we need to install all the rospackage dependencies. Navigate to the top-l
 rosdep install --from-paths src --ignore-src -r -y 
 ```
 
+If using the ZED packages, we also need to install the following:
+
+```
+sudo apt install ros-foxy-diagnostic-updater ros-foxy-robot-localization ros-foxy-nmea-msgs ros-foxy-xacro
+```
+
 Next, we'll build the main packages of the repository and source the build
 
 ```
