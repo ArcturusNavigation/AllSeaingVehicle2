@@ -5,28 +5,15 @@
 ### Prerequisites
 
 - [ROS2 Humble](https://docs.ros.org/en/humble/Installation.html)
-- Docker and [Distrobox](https://github.com/89luca89/distrobox) (if Ubuntu 22.04 is not available, e.g. on Jetson devices)
-- ZED SDK (only install on Jetson devices)
+    - If using the Jetson, use [ROS2 Foxy](https://docs.ros.org/en/foxy/Installation.html)
+- ZED SDK 4.0 (only install on Jetson devices)
+    - When flashing the Jetson Xavier, make sure to flash with Jetpack 5.1.1! As of now (08/29/2023), the ZED SDK does not support the latest Jetpack 5.1.2.
 
-If Ubuntu 22.04 is needed, install Distrobox and run 
-
-```
-distrobox create -i ubuntu:22.04
-```
-
-to create an Ubuntu 22.04 environment. You can now enter the Ubuntu 22.04 environment by running `distrobox enter <name-of-env>` and exit by running `exit`.
-
-The Velodyne LiDAR drivers also require the following packages:
+To download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
 
 ```
-sudo apt install libpcap-dev ros-humble-diagnostic-updater
-```
-
-Finally, to download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
-
-```
-curl -L https://download.stereolabs.com/zedsdk/3.8/l4t32.6/jetsons -o installer.run # Replace link with https://download.stereolabs.com/zedsdk/3.8/cu117/ubuntu20 if using docker
-chmod +x installer.run 
+curl -o installer.run https://stereolabs.sfo2.cdn.digitaloceanspaces.com/zedsdk/4.0/ZED_SDK_Tegra_L4T35.3_v4.0.6.zstd.run
+chmod +x ./installer.run
 ```
 
 Next, run the installer
