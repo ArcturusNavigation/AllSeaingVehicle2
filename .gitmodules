@@ -5,3 +5,9 @@
 	path = src/velodyne
 	url = https://github.com/ros-drivers/velodyne.git
 	branch = foxy-devel
+[submodule "src/sick_scan_xd"]
+	path = src/sick_scan_xd
+	url = https://github.com/SICKAG/sick_scan_xd.git
+[submodule "src/msgpack11"]
+	path = src/msgpack11
+	url = https://github.com/SICKAG/msgpack11.git
