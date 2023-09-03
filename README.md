@@ -46,14 +46,10 @@ git submodule update --init --recursive
 First, we need to install all the rospackage dependencies. Navigate to the top-level of the repository then run
 
 ```
-rosdep install --from-paths src --ignore-src -r -y 
+rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
 ```
 
-If using the ZED packages, we also need to install the following:
-
-```
-sudo apt install ros-foxy-diagnostic-updater ros-foxy-robot-localization ros-foxy-nmea-msgs ros-foxy-xacro
-```
+change `humble` to `foxy` if needed.
 
 Next, we'll build the main packages of the repository and source the build
 

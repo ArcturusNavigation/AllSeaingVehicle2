@@ -1,13 +1,19 @@
+# Project files
+.DS_Store
+.DS_Store?
+.cproject
+.project
+.pydevproject
+*.pyc
+__pycache__/
+
 # ROS
 install/
 log/
 build/
 *.bag
+*settings.yaml
 COLCON_IGNORE
 
 # VSCode
 .vscode
-
-# Miscellaneous
-*.deb
-.DS_Store
