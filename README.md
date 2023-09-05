@@ -59,3 +59,17 @@ source install/setup.bash
 ```
 
 ## Testing
+
+### Using iMOOSGateway
+
+Install the required dependencies by running
+
+```
+sudo apt install protobuf-compiler libb64-dev
+```
+
+Next, create the protobuf files by `cd` into `AllSeaingVehicle2/src/protobuf_client_ros2/include/protobuf_client` and running
+
+```
+protoc --cpp_out=. gateway.proto
+```
