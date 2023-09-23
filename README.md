@@ -54,7 +54,7 @@ change `humble` to `foxy` if needed.
 Next, we'll build the main packages of the repository and source the build
 
 ```
-colcon build --symlink-install
+colcon build --merge-install
 source install/setup.bash
 ```
 

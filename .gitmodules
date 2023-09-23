@@ -14,3 +14,4 @@
 [submodule "src/vrx"]
 	path = src/vrx
 	url = git@github.com:ArcturusNavigation/vrx.git
+	branch = master

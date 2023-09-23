@@ -95,8 +95,18 @@ ament_target_dependencies(protobuf_client_node
   std_msgs
   protobuf_client_interfaces)
 
+
+# Node: message_parser 
+add_executable(message_parser
+  src/message_parser.cpp)
+ament_target_dependencies(message_parser
+  rclcpp
+  protobuf_client_interfaces)
+
+
 install(TARGETS
   protobuf_client_node
+  message_parser
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY include/ DESTINATION include/gateway_tcp_lib)
