@@ -11,3 +11,6 @@
 [submodule "src/msgpack11"]
 	path = src/msgpack11
 	url = https://github.com/SICKAG/msgpack11.git
+[submodule "src/vrx"]
+	path = src/vrx
+	url = git@github.com:ArcturusNavigation/vrx.git
