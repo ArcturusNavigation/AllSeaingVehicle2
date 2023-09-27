@@ -13,12 +13,14 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(Boost REQUIRED COMPONENTS)
 find_package(Protobuf REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(class_loader REQUIRED)
+find_package(asv_interfaces REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(protobuf_client_interfaces REQUIRED)  # Custom Msg for protobuf_client
 
@@ -104,9 +106,21 @@ ament_target_dependencies(message_parser
   protobuf_client_interfaces)
 
 
+# Node: message_sender
+add_executable(message_sender
+  src/message_sender.cpp)
+ament_target_dependencies(message_sender
+  rclcpp
+  std_msgs
+  sensor_msgs
+  asv_interfaces
+  protobuf_client_interfaces)
+
+
 install(TARGETS
   protobuf_client_node
   message_parser
+  message_sender
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY include/ DESTINATION include/gateway_tcp_lib)
