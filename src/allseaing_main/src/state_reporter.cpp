@@ -10,11 +10,6 @@ using namespace std::chrono_literals;
 class StateReporter : public rclcpp::Node {
     public:
         StateReporter() : Node("state_reporter") {
-            this->declare_parameter("lat_origin", rclcpp::PARAMETER_DOUBLE);
-            this->declare_parameter("lon_origin", rclcpp::PARAMETER_DOUBLE);
-
-            m_lat_origin = this->get_parameter("lat_origin").as_double();
-            m_lon_origin = this->get_parameter("lon_origin").as_double();
 
             m_timer = this->create_wall_timer(
                 //16.67ms,
@@ -57,14 +52,12 @@ class StateReporter : public rclcpp::Node {
             double r, p, y;
             m.getRPY(r, p, y);
             //std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
-            m_state.nav_heading = y;
+            m_state.nav_heading = -y * 180 / M_PI + 90; // Offset and negative sign due to NED/ENU IMU difference
         }
 
         void gps_callback(const sensor_msgs::msg::NavSatFix & msg) {
             m_state.nav_long = msg.longitude;
             m_state.nav_lat = msg.latitude;
-            m_state.nav_x = msg.longitude - m_lon_origin;
-            m_state.nav_y = msg.latitude - m_lat_origin;
         }
 
         void timer_callback() {
