@@ -15,3 +15,7 @@
 	path = src/vrx
 	url = git@github.com:ArcturusNavigation/vrx.git
 	branch = master
+[submodule "src/robot_localization"]
+	path = src/robot_localization
+	url = git@github.com:cra-ros-pkg/robot_localization.git
+    branch = ros2
