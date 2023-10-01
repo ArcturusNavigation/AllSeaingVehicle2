@@ -51,7 +51,6 @@ class StateReporter : public rclcpp::Node {
             tf2::Matrix3x3 m(q);
             double r, p, y;
             m.getRPY(r, p, y);
-            //std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
             m_state.nav_heading = -y * 180 / M_PI + 90; // Offset and negative sign due to NED/ENU IMU difference
         }
 

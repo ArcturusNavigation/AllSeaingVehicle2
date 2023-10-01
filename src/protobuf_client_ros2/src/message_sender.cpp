@@ -1,3 +1,4 @@
+#include <string>
 #include "rclcpp/rclcpp.hpp"
 #include "protobuf_client/protobuf_client_node.hpp"
 #include "asv_interfaces/msg/asv_state.hpp"
@@ -21,24 +22,10 @@ class MessageSender : public rclcpp::Node {
         rclcpp::Publisher<protobuf_client_interfaces::msg::Gateway>::SharedPtr m_gateway_pub;
 
         void state_callback(const asv_interfaces::msg::ASVState & msg) {
-            auto nav_lat_msg = protobuf_client_interfaces::msg::Gateway();
-            auto nav_long_msg = protobuf_client_interfaces::msg::Gateway();
-            auto nav_heading_msg = protobuf_client_interfaces::msg::Gateway();
-            auto nav_speed_msg = protobuf_client_interfaces::msg::Gateway();
-
-            nav_lat_msg.gateway_key = "NAV_LAT";
-            nav_lat_msg.gateway_double = msg.nav_lat;
-            nav_long_msg.gateway_key = "NAV_LONG";
-            nav_long_msg.gateway_double = msg.nav_long;
-            nav_heading_msg.gateway_key = "NAV_HEADING";
-            nav_heading_msg.gateway_double = msg.nav_heading;
-            nav_speed_msg.gateway_key = "NAV_SPEED";
-            nav_speed_msg.gateway_double = msg.nav_speed;
-
-            m_gateway_pub->publish(nav_lat_msg);
-            m_gateway_pub->publish(nav_long_msg);
-            m_gateway_pub->publish(nav_heading_msg);
-            m_gateway_pub->publish(nav_speed_msg);
+            auto nav_msg = protobuf_client_interfaces::msg::Gateway();
+            nav_msg.gateway_string = "NAV_LAT=" + std::to_string(msg.nav_lat) + ", NAV_LONG=" + std::to_string(msg.nav_long) + 
+                                     ", NAV_HEADING=" + std::to_string(msg.nav_heading) + ", NAV_SPEED=" + std::to_string(msg.nav_speed);
+            m_gateway_pub->publish(nav_msg);
         }
 };
 
