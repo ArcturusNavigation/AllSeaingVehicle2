@@ -18,13 +18,13 @@ class StateReporter : public rclcpp::Node {
             );
 
             m_imu_sub = this->create_subscription<sensor_msgs::msg::Imu>(
-                "/wamv/sensors/imu/imu/data",
+                "/imu/data",
                 10,
                 std::bind(&StateReporter::imu_callback, this, std::placeholders::_1)
             );
 
             m_gps_sub = this->create_subscription<sensor_msgs::msg::NavSatFix>(
-                "/wamv/sensors/gps/gps/fix",
+                "/gps/fix",
                 10,
                 std::bind(&StateReporter::gps_callback, this, std::placeholders::_1)
             );
@@ -39,7 +39,6 @@ class StateReporter : public rclcpp::Node {
         rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr m_gps_sub;
         rclcpp::Publisher<asv_interfaces::msg::ASVState>::SharedPtr m_state_pub;
 
-        double m_lat_origin, m_lon_origin;
         asv_interfaces::msg::ASVState m_state = asv_interfaces::msg::ASVState();
 
         void imu_callback(const sensor_msgs::msg::Imu & msg) {

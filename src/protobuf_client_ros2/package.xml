@@ -11,6 +11,7 @@
   
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
   <depend>protobuf_client_interfaces</depend>
   <depend>asv_interfaces</depend>
     

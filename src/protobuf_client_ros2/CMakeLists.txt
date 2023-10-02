@@ -14,6 +14,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(Boost REQUIRED COMPONENTS)
@@ -102,6 +103,8 @@ ament_target_dependencies(protobuf_client_node
 add_executable(message_parser
   src/message_parser.cpp)
 ament_target_dependencies(message_parser
+  std_msgs
+  geometry_msgs
   rclcpp
   protobuf_client_interfaces)
 

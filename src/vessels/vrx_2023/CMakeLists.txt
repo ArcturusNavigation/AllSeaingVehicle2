@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 # install the launch directory
 install(DIRECTORY
     launch
+    params
     DESTINATION share/${PROJECT_NAME}/)
 
 ament_package()
