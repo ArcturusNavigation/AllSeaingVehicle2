@@ -23,7 +23,8 @@ class MessageSender : public rclcpp::Node {
 
         void state_callback(const asv_interfaces::msg::ASVState & msg) {
             auto nav_msg = protobuf_client_interfaces::msg::Gateway();
-            nav_msg.gateway_string = "NAV_LAT=" + std::to_string(msg.nav_lat) + ", NAV_LONG=" + std::to_string(msg.nav_long) + 
+            nav_msg.gateway_key = "ROS_REPORT";
+            nav_msg.gateway_string = "NAV_LAT=" + std::to_string(msg.nav_lat) + ", NAV_LON=" + std::to_string(msg.nav_long) + 
                                      ", NAV_HEADING=" + std::to_string(msg.nav_heading) + ", NAV_SPEED=" + std::to_string(msg.nav_speed);
             m_gateway_pub->publish(nav_msg);
         }
