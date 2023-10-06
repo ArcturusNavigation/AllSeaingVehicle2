@@ -13,6 +13,7 @@
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
   <depend>tf2</depend>
   <depend>asv_interfaces</depend>
 

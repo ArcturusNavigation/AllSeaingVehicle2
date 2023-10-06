@@ -45,7 +45,6 @@ navsat_transform_node:
         wait_for_datum: true
         use_odometry_yaw: false
         datum: [-33.7228, 150.6740, 0.0]
-        #yaw_offset: -1.5707963
         yaw_offset: 0.0
         publish_filtered_gps: true
 

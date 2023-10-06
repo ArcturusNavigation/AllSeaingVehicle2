@@ -1,6 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 #include "sensor_msgs/msg/nav_sat_fix.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 #include "asv_interfaces/msg/asv_state.hpp"
 #include "tf2/LinearMath/Quaternion.h"
 #include "tf2/LinearMath/Matrix3x3.h"
@@ -29,6 +30,12 @@ class StateReporter : public rclcpp::Node {
                 std::bind(&StateReporter::gps_callback, this, std::placeholders::_1)
             );
 
+            m_odom_sub = this->create_subscription<nav_msgs::msg::Odometry>(
+                "/odometry/filtered",
+                10,
+                std::bind(&StateReporter::odom_callback, this, std::placeholders::_1)
+            );
+
             m_state_pub = this->create_publisher<asv_interfaces::msg::ASVState>("/allseaing_main/state", 10);
 
         }
@@ -37,6 +44,7 @@ class StateReporter : public rclcpp::Node {
         rclcpp::TimerBase::SharedPtr m_timer;
         rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr m_imu_sub;
         rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr m_gps_sub;
+        rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr m_odom_sub;
         rclcpp::Publisher<asv_interfaces::msg::ASVState>::SharedPtr m_state_pub;
 
         asv_interfaces::msg::ASVState m_state = asv_interfaces::msg::ASVState();
@@ -50,13 +58,20 @@ class StateReporter : public rclcpp::Node {
             tf2::Matrix3x3 m(q);
             double r, p, y;
             m.getRPY(r, p, y);
-            std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
+            //std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
+            // TODO: make NED/ENU IMU difference a ROSParam
             m_state.nav_heading = -y * 180 / M_PI + 90; // Offset and negative sign due to NED/ENU IMU difference
         }
 
+        void odom_callback(const nav_msgs::msg::Odometry & msg) {
+            m_state.nav_x = msg.twist.twist.linear.x;
+            m_state.nav_y = msg.twist.twist.linear.y;
+            m_state.nav_speed = sqrt(m_state.nav_x * m_state.nav_x + m_state.nav_y * m_state.nav_y);
+        }
+
         void gps_callback(const sensor_msgs::msg::NavSatFix & msg) {
-            m_state.nav_long = msg.longitude;
             m_state.nav_lat = msg.latitude;
+            m_state.nav_long = msg.longitude;
         }
 
         void timer_callback() {

@@ -106,7 +106,8 @@ ament_target_dependencies(message_parser
   std_msgs
   geometry_msgs
   rclcpp
-  protobuf_client_interfaces)
+  protobuf_client_interfaces
+  asv_interfaces)
 
 
 # Node: message_sender
