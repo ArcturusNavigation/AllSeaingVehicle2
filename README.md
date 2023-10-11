@@ -9,6 +9,12 @@
 - ZED SDK 4.0 (only install on Jetson devices)
     - When flashing the Jetson Xavier, make sure to flash with Jetpack 5.1.1! As of now (08/29/2023), the ZED SDK does not support the latest Jetpack 5.1.2.
 
+Install the required dependencies by running
+
+```
+sudo apt install protobuf-compiler libb64-dev
+```
+
 To download the ZED SDK, find and download the correct installer from https://www.stereolabs.com/developers/release/ or use curl
 
 ```
@@ -28,6 +34,8 @@ On a Jetson device, you also need to create an alias to the path for opencv
 ```
 sudo ln -s /usr/include/opencv4/opencv2 /usr/include/opencv 
 ```
+
+### TODO: Install Gazebo
 
 ### Cloning the repository
 
@@ -62,11 +70,6 @@ source install/setup.bash
 
 ### Using iMOOSGateway
 
-Install the required dependencies by running
-
-```
-sudo apt install protobuf-compiler libb64-dev
-```
 
 Next, create the protobuf files by `cd` into `AllSeaingVehicle2/src/protobuf_client_ros2/include/protobuf_client` and running
 
