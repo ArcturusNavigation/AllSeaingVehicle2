@@ -41,6 +41,10 @@ If you need the ZED and LiDAR repository, update the submodules. This is necessa
 git submodule update --init --recursive
 ```
 
+### Quick installation
+
+Run the `setup.sh` file by typing `./setup.sh` at the root directory. This should install required dependencies, update the required submodules for development, set up iMOOSGateway, and build your colcon workspace.
+
 ## Building repository
 
 First, we need to install all the rospackage dependencies. Navigate to the top-level of the repository then run
@@ -61,12 +65,6 @@ source install/setup.bash
 ## Testing
 
 ### Using iMOOSGateway
-
-Install the required dependencies by running
-
-```
-sudo apt install protobuf-compiler libb64-dev
-```
 
 Next, create the protobuf files by `cd` into `AllSeaingVehicle2/src/protobuf_client_ros2/include/protobuf_client` and running
 

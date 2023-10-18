@@ -1,0 +1,21 @@
+#! /bin/bash
+sudo apt update && sudo apt upgrade
+sudo apt install protobuf-compiler libb64-dev ros-humble-diagnostic-updater lsb-release wget gnupg 
+
+# Install Gazebo Garden
+sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt update
+sudo apt install gz-garden python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
+
+# Install dependencies
+rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
+
+# Initialize submodule
+git submodule update --init --recursive src/robot_localization src/vrx
+
+# Set up Protobuf Gateway
+protoc --cpp_out=./src/protobuf_client_ros2/include/protobuf_client ./src/protobuf_client_ros2/include/protobuf_client/gateway.proto
+
+# Build colcon workspace
+colcon build --merge-install
