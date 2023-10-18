@@ -22,7 +22,7 @@ install(DIRECTORY
     DESTINATION share/${PROJECT_NAME}/)
 
 install(PROGRAMS
-    vrx_2023/waypoints.py
+    src/waypoints.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

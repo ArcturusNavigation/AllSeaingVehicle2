@@ -14,13 +14,12 @@ class WaypointPubSub(Node):
             '/vrx/wayfinding/waypoints',
             self.listener_callback,
             10)
-        self.subscription  # prevent unused variable warning
+        self.subscription
         self.publisher_ = self.create_publisher(String, '/gateway_msgs', 10)
-
 
     def listener_callback(self, msg):
         new_msg = String()
-        inner_string = ""
+        inner_string = "WAYPOINTS="
         for i, pose in enumerate(msg.poses):
             inner_string += f"{pose.position.y},{pose.position.x}"
             if i < len(msg.poses) - 1:
@@ -28,20 +27,12 @@ class WaypointPubSub(Node):
         new_msg.data = inner_string
         self.publisher_.publish(new_msg)
 
-
 def main(args=None):
     rclpy.init(args=args)
-
     pub_sub = WaypointPubSub()
-
     rclpy.spin(pub_sub)
-
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
     pub_sub.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()
