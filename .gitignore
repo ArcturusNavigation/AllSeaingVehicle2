@@ -11,6 +11,8 @@ __pycache__/
 install/
 log/
 build/
+bagfiles/*
+*.db3
 *.bag
 *settings.yaml
 COLCON_IGNORE

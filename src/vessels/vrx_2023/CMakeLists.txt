@@ -15,7 +15,7 @@ find_package(geometry_msgs REQUIRED)
 
 ament_python_install_package(${PROJECT_NAME})
 
-# install the launch directory
+# install the launch and params directory
 install(DIRECTORY
     launch
     params
