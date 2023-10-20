@@ -24,6 +24,7 @@ install(DIRECTORY
 
 install(PROGRAMS
     src/waypoints.py
+    src/stationkeeping.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
