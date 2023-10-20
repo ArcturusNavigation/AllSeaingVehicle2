@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import PoseArray
-from std_msgs.msg import String
+from protobuf_client_interfaces.msg import Gateway
 
 class WaypointPubSub(Node):
 
@@ -15,17 +15,19 @@ class WaypointPubSub(Node):
             self.listener_callback,
             10)
         self.subscription
-        self.publisher_ = self.create_publisher(String, '/gateway_msgs', 10)
+        self.publisher = self.create_publisher(Gateway, '/send_to_gateway', 10)
 
     def listener_callback(self, msg):
-        new_msg = String()
-        inner_string = "WAYPOINTS="
+        waypt_msg = Gateway()
+        inner_string = ""
         for i, pose in enumerate(msg.poses):
-            inner_string += f"{pose.position.y},{pose.position.x}"
+            inner_string += f"{pose.position.x},{pose.position.y}"
             if i < len(msg.poses) - 1:
                 inner_string += ":"
-        new_msg.data = inner_string
-        self.publisher_.publish(new_msg)
+        waypt_msg.gateway_key = "WPT_UPDATE_GPS"
+        waypt_msg.gateway_string = inner_string
+        self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
+        self.publisher.publish(waypt_msg)
 
 def main(args=None):
     rclpy.init(args=args)
