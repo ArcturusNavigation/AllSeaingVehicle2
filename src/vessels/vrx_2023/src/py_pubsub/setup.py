@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = py_pubsub.acoustic_tracking.launch:main',
-            'listener = py_pubsub.subscriber_member_function:main',
+            'talker = py_pubsub.publisher_member_function:main',
+            'listener = py_pubsub.subscriber:main',
         ],
     },
 )
