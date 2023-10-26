@@ -49,13 +49,13 @@ def generate_launch_description():
                 ("/imu/data", "/wamv/sensors/imu/imu/data"),
                 ("/gps/fix", "/wamv/sensors/gps/gps/fix")]),
 
-        # stationkeeping
+        # wildlife task
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([vrx_gz_prefix, "/launch/competition.launch.py"]),
-            launch_arguments = {"world": "stationkeeping_task"}.items()),
+            launch_arguments = {"world": "wildlife_task"}.items()),
         launch_ros.actions.Node(
 	        package="vrx_2023", 
-            executable="stationkeeping.py", 
+            executable="wildlife_simple.py", 
             output="screen"),
 
         # MOOS-ROS bridge

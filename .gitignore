@@ -12,6 +12,7 @@ install/
 log/
 build/
 bagfiles/*
+!bagfiles/.gitkeep
 *.db3
 *.bag
 *settings.yaml
