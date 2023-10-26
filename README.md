@@ -32,7 +32,7 @@ sudo ln -s /usr/include/opencv4/opencv2 /usr/include/opencv
 ### Cloning the repository
 
 ```
-git clone https://github.com/ArcturusNavigation/AllSeaingVehicle2.git
+git clone git@github.com:ArcturusNavigation/AllSeaingVehicle2.git
 ```
 
 If you need the ZED and LiDAR repository, update the submodules. This is necessary to run for Jetson computers, but may not be needed if running ROS locally.
