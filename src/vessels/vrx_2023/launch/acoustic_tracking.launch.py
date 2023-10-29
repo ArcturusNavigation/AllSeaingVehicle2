@@ -53,7 +53,9 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([vrx_gz_prefix, "/launch/competition.launch.py"]),
             launch_arguments = {"world": "acoustic_tracking_task"}.items()),
-
+        launch_ros.actions.Node(
+	        package="vrx_2023", executable="acoustic_tracking_sub.py", output="screen"),
+       
         # MOOS-ROS bridge
         launch_ros.actions.Node(
 	        package="protobuf_client", executable="protobuf_client_node", output="screen"),
