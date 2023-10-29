@@ -8,11 +8,11 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-
 sudo apt update
 sudo apt install gz-garden python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
 
-# Install dependencies
-rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
-
 # Initialize submodule
 git submodule update --init --recursive src/robot_localization src/vrx
+
+# Install dependencies
+rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
 
 # Set up Protobuf Gateway
 protoc --cpp_out=./src/protobuf_client_ros2/include/protobuf_client ./src/protobuf_client_ros2/include/protobuf_client/gateway.proto
