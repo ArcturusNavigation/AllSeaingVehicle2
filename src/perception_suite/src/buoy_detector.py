@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 import cv_bridge 
 import cv2
@@ -86,7 +87,7 @@ class BuoyDetector(Node):
                 self.bbox_maxes[bbox.label].y = max(bbox.max_y, self.bbox_maxes[bbox.label].y)
                 
         new_bboxes = LabeledBoundingBox2DArray()
-        new_bboxes.header.stamp = rospy.Time.now()
+        new_bboxes.header.stamp = rclpy.Time.now()
         for label in self.bbox_mins:
             labeled_bbox = LabeledBoundingBox2D()
             labeled_bbox.label = label
@@ -119,7 +120,7 @@ class BuoyDetector(Node):
         try:
             img = self.bridge.imgmsg_to_cv2(img, "rgb8")
         except cv_bridge.CvBridgeError as e:
-            rospy.loginfo(e)
+            self.get_logger().info(str(e))
 
         # Draw bboxes
         for label in self.bbox_mins:
@@ -189,7 +190,7 @@ class BuoyDetector(Node):
 #
 #        # Publish heading error for controller
 #        self.buoy_heading_pub.publish(heading_error)
-
+        
         self.img_pub.publish(self.bridge.cv2_to_imgmsg(img, "rgb8"))
 
 def main(args=None):

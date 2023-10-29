@@ -32,8 +32,15 @@ install(TARGETS
   
 ament_python_install_package(${PROJECT_NAME})
 
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  
+ )
+ament_export_dependencies(rosidl_default_runtime)
+
 install(PROGRAMS
   src/pointcloud_sub.py
+  src/buoy_detector.py
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
