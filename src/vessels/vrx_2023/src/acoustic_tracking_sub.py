@@ -11,12 +11,12 @@ class MinimalSubscriber(Node):
     def __init__(self):
         super().__init__('acoustic_tracking_sub')
         self.pinger_subscription = self.create_subscription(
-            ros_gz_interfaces/msg/ParamVec,
+            ParamVec,
             '/wamv/sensors/acoustics/receiver/range_bearing',
             self.pinger_callback,
             10)
         self.odometry_subscription = self.create_subscription(
-            nav_msgs/msg/Odometry,
+            Odometry,
             'odometry/filtered',
             self.odom_callback,
             10)
