@@ -21,11 +21,9 @@ class AcousticTrackingSub(Node):
 
     def pinger_callback(self, msg):
         self.get_logger().info('Pinger heard: "%s"' % msg.params[0])
-        pass
 
     def odom_callback(self, msg):
         self.get_logger().info('Odom heard x position: "%s"' % msg.pose.pose.position.x)
-        pass
 
 def main(args=None):
     rclpy.init(args=args)
