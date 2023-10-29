@@ -16,7 +16,6 @@ find_package(protobuf_client_interfaces REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(ros_gz_interfaces REQUIRED)
 
-
 ament_python_install_package(${PROJECT_NAME})
 
 # install the launch and params directory
