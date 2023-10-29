@@ -13,6 +13,9 @@ find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(protobuf_client_interfaces REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
+
 
 ament_python_install_package(${PROJECT_NAME})
 
@@ -26,6 +29,7 @@ install(PROGRAMS
     src/waypoints.py
     src/stationkeeping.py
     src/wildlife_simple.py
+    src/acoustic_tracking_sub.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
