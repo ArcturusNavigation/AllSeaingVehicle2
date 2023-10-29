@@ -32,13 +32,12 @@ def generate_launch_description():
 
     # Setup project paths
     pkg_project_bringup = get_package_share_directory('core_bringup')
-    pkg_project_description = get_package_share_directory('worms_description')
-    pkg_project_gazebo = get_package_share_directory('worms_gazebo')
+    pkg_project_description = get_package_share_directory('robot_description')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     
     # Parse robot description from xacro
-    robot_description_file = os.path.join(pkg_project_description, 'models', 'hound', 'urdf', 'hound_worms.xacro')
+    robot_description_file = os.path.join(pkg_project_description, 'models', 'athena', 'urdf', 'athena.urdf.xacro')
     robot_description_config = xacro.process_file(
         robot_description_file
     )
