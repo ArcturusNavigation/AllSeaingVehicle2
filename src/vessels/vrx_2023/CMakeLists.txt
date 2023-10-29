@@ -23,6 +23,7 @@ install(DIRECTORY
 
 install(PROGRAMS
     vrx_2023/waypoints.py
+    vrx_2023/xdrive_controller.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
