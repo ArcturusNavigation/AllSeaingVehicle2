@@ -3,23 +3,21 @@ import rclpy
 from rclpy.node import Node
 
 from ros_gz_interfaces.msg import ParamVec
-from nav_msgs.msg import Odometry 
-from geometry_msgs.msg import Point, Pose
-import math
+from geometry_msgs.msg import Point
 from asv_interfaces.msg import ASVState
+
+import math
 
 class AcousticTrackingSub(Node):
     def __init__(self):
-        pinger_bearing = None
-        pinger_range = None
-        nav_x = 0
-        nav_y = 0
-        heading = 0
+        self.pinger_bearing = 0
+        self.pinger_range = 0
+        self.nav_x = 0
+        self.nav_y = 0
+        self.heading = 0
         super().__init__('acoustic_tracking_sub')
         timer_period = 1/60
         self.timer = self.create_timer(timer_period, self.timer_callback)
-
-            
 
         self.pinger_subscription = self.create_subscription(
             ParamVec,
@@ -34,16 +32,17 @@ class AcousticTrackingSub(Node):
             10)
         self.pinger_coord_pub = self.create_publisher(Point, '/pinger_coord', 10)
 
-
     def timer_callback(self):
-        orientation_angle = math.radians(heading)
-        x_coord = nav_x
-        y_coord = nav_y
+        orientation_angle = math.radians(self.heading)
+        x_coord = self.nav_x
+        y_coord = self.nav_y
         bearing = self.pinger_bearing
         pinger_range = self.pinger_range
-        new_x_coord = x_coord + pinger_range*math.sin(bearing+orientation_angle)
-        new_y_coord = y_coord + pinger_range*math.cos(bearing+orientation_angle)
-        point = Point(new_x_coord, new_y_coord,0)
+        new_x_coord = x_coord + pinger_range * math.sin(bearing + orientation_angle)
+        new_y_coord = y_coord + pinger_range * math.cos(bearing + orientation_angle)
+        point = Point()
+        point.x = new_x_coord
+        point.y = new_y_coord
         self.pinger_coord_pub.publish(point)
 
     def pinger_callback(self, msg):
@@ -53,9 +52,7 @@ class AcousticTrackingSub(Node):
     def odom_callback(self, msg):
         self.nav_x = msg.nav_x
         self.nav_y = msg.nav_y
-        self.heading = msg.heading
-
-
+        self.heading = msg.nav_heading
 
 def main(args=None):
     rclpy.init(args=args)

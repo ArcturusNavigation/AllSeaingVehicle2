@@ -15,6 +15,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(protobuf_client_interfaces REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(ros_gz_interfaces REQUIRED)
+find_package(asv_interfaces REQUIRED)
 
 # install the launch and params directory
 install(DIRECTORY
