@@ -46,8 +46,12 @@ class AcousticTrackingSub(Node):
         self.pinger_coord_pub.publish(point)
 
     def pinger_callback(self, msg):
-        self.pinger_bearing = msg.params[1].value.double_value
-        self.pinger_range = msg.params[2].value.double_value       
+        for element in msg.params:
+            if element.name == 'bearing':
+                self.pinger_bearing = element.value.double_value
+            if element.name == 'range':
+                self.pinger_range = element.value.double_value
+              
 
     def odom_callback(self, msg):
         self.nav_x = msg.nav_x
