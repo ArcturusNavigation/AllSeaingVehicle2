@@ -29,6 +29,7 @@ install(PROGRAMS
     src/stationkeeping.py
     src/wildlife_simple.py
     src/acoustic_tracking_sub.py
+    src/xdrive_controller.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
