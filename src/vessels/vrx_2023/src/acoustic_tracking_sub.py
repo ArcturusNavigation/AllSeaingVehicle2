@@ -12,6 +12,7 @@ class AcousticTrackingSub(Node):
     def __init__(self):
         self.pinger_bearing = 0
         self.pinger_range = 0
+        self.pinger_elevation = 0
         self.nav_x = 0
         self.nav_y = 0
         self.heading = 0
@@ -37,9 +38,9 @@ class AcousticTrackingSub(Node):
         x_coord = self.nav_x
         y_coord = self.nav_y
         bearing = self.pinger_bearing
-        pinger_range = self.pinger_range
-        new_x_coord = x_coord + pinger_range * math.sin(bearing + orientation_angle)
-        new_y_coord = y_coord + pinger_range * math.cos(bearing + orientation_angle)
+        pinger_radius = self.pinger_range * math.cos(self.pinger_elevation)
+        new_x_coord = x_coord + pinger_radius * math.sin(bearing + orientation_angle)
+        new_y_coord = y_coord + pinger_radius * math.cos(bearing + orientation_angle)
         point = Point()
         point.x = new_x_coord
         point.y = new_y_coord
@@ -47,11 +48,12 @@ class AcousticTrackingSub(Node):
 
     def pinger_callback(self, msg):
         for element in msg.params:
-            if element.name == 'bearing':
-                self.pinger_bearing = element.value.double_value
-            if element.name == 'range':
+            if element.name == "bearing":
+                self.pinger_bearing = -element.value.double_value
+            if element.name == "range":
                 self.pinger_range = element.value.double_value
-              
+            if element.name == "elevation":
+                self.pinger_elevation = element.value.double_value                
 
     def odom_callback(self, msg):
         self.nav_x = msg.nav_x
