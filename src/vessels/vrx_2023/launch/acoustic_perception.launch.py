@@ -57,6 +57,10 @@ def generate_launch_description():
 	        package="vrx_2023",
             executable="acoustic_tracking_sub.py",
             output="screen"),
+        launch_ros.actions.Node(
+	        package="vrx_2023",
+            executable="acoustic_wpt_sender.py",
+            output="screen"),
        
         # MOOS-ROS bridge
         launch_ros.actions.Node(

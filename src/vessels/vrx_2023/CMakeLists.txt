@@ -25,6 +25,7 @@ install(DIRECTORY
 
 install(PROGRAMS
     src/waypoints.py
+    src/acoustic_wpt_sender.py
     src/stationkeeping.py
     src/wildlife_simple.py
     src/acoustic_tracking_sub.py
