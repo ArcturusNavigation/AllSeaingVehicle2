@@ -1,5 +1,12 @@
 #! /bin/bash
 sudo apt update && sudo apt upgrade
+
+# MOOS-IvP requirements
+sudo apt-get install g++ cmake xterm
+sudo apt-get install libfltk1.3-dev freeglut3-dev libpng-dev libjpeg-dev 
+sudo apt-get install libxft-dev libxinerama-dev libtiff5-dev
+
+# Basic ROS package requirements
 sudo apt install protobuf-compiler libb64-dev ros-humble-diagnostic-updater lsb-release wget gnupg 
 
 # Install Gazebo Garden
