@@ -1,37 +1,36 @@
 #!/usr/bin/env python3
 import rclpy
-from rclpy.node import Node
+import math
 
 from ros_gz_interfaces.msg import ParamVec
 from geometry_msgs.msg import Point
 from asv_interfaces.msg import ASVState
+from vrx_2023.task_node import TaskNode
 
-import math
-
-class AcousticTrackingSub(Node):
+class AcousticTrackingSub(TaskNode):
     def __init__(self):
+        super().__init__("acoustic_tracking_sub")
         self.pinger_bearing = 0
         self.pinger_range = 0
         self.pinger_elevation = 0
         self.nav_x = 0
         self.nav_y = 0
         self.heading = 0
-        super().__init__('acoustic_tracking_sub')
         timer_period = 1/60
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.pinger_subscription = self.create_subscription(
             ParamVec,
-            '/wamv/sensors/acoustics/receiver/range_bearing',
+            "/wamv/sensors/acoustics/receiver/range_bearing",
             self.pinger_callback,
             10)
 
         self.odometry_subscription = self.create_subscription(
             ASVState,
-            '/allseaing_main/state',
+            "/allseaing_main/state",
             self.odom_callback,
             10)
-        self.pinger_coord_pub = self.create_publisher(Point, '/pinger_coord', 10)
+        self.pinger_coord_pub = self.create_publisher(Point, "/pinger_coord", 10)
 
     def timer_callback(self):
         orientation_angle = math.radians(self.heading)
@@ -44,7 +43,8 @@ class AcousticTrackingSub(Node):
         point = Point()
         point.x = new_x_coord
         point.y = new_y_coord
-        self.pinger_coord_pub.publish(point)
+        if self.task_name in ("acoustic_tracking", "acoustic_perception"):
+            self.pinger_coord_pub.publish(point)
 
     def pinger_callback(self, msg):
         for element in msg.params:
@@ -67,5 +67,5 @@ def main(args=None):
     node.destroy_node()
     rclpy.shutdown()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

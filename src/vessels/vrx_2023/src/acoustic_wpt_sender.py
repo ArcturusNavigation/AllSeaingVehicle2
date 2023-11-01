@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
 import rclpy
-from rclpy.node import Node
 
 from geometry_msgs.msg import Point
+from vrx_2023.task_node import TaskNode
 from protobuf_client_interfaces.msg import Gateway
 
-class AcousticWPTSender(Node):
+class AcousticWPTSender(TaskNode):
 
     def __init__(self):
-        super().__init__('acoustic_wpt_sender')
+        super().__init__("acoustic_wpt_sender")
         self.subscription = self.create_subscription(
             Point,
-            '/pinger_coord',
+            "/pinger_coord",
             self.listener_callback,
             10)
-        self.publisher = self.create_publisher(Gateway, '/send_to_gateway', 10)
+        self.publisher = self.create_publisher(Gateway, "/send_to_gateway", 10)
 
     def listener_callback(self, msg: Point):
         waypt_msg = Gateway()
         waypt_msg.gateway_key = "WPT_UPDATE"
         waypt_msg.gateway_string = f"points={msg.x},{msg.y}"
-        self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
-        self.publisher.publish(waypt_msg)
+        if self.task_name in ("acoustic_tracking", "acoustic_perception"):
+            self.publisher.publish(waypt_msg)
 
 def main(args=None):
     rclpy.init(args=args)
@@ -30,5 +30,5 @@ def main(args=None):
     node.destroy_node()
     rclpy.shutdown()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

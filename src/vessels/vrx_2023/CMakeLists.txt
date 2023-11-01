@@ -23,7 +23,10 @@ install(DIRECTORY
     params
     DESTINATION share/${PROJECT_NAME}/)
 
+ament_python_install_package(${PROJECT_NAME})
+
 install(PROGRAMS
+    src/task_sender.py
     src/waypoints.py
     src/acoustic_wpt_sender.py
     src/stationkeeping.py

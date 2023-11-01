@@ -14,8 +14,7 @@ class StateReporter : public rclcpp::Node {
         StateReporter() : Node("state_reporter") {
 
             m_timer = this->create_wall_timer(
-                //16.67ms,
-                100ms,
+                200ms,
                 std::bind(&StateReporter::timer_callback, this)
             );
 

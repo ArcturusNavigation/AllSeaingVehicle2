@@ -47,7 +47,7 @@ ProtobufClientNode::ProtobufClientNode(rclcpp::NodeOptions options)
   // Sub callback must match supported class template 
   this->sub_to_gateway_ = this->create_subscription<protobuf_client_interfaces::msg::Gateway>(
     send_to_gateway_topic_,
-    10, 
+    100, 
     std::bind(&ProtobufClientNode::to_gateway_cb, this, std::placeholders::_1));
 
   // Connecting to iMOOSGateway
