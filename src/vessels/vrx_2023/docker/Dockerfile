@@ -2,6 +2,7 @@ FROM ros:humble-ros-base-jammy
 
 # Set up timezone
 ENV TZ=Etc/UTC
+SHELL ["/bin/bash", "-c"]
 RUN echo $TZ > /etc/timezone && \
   ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
 
@@ -32,7 +33,7 @@ ARG ROSDIST=humble
 RUN apt update && apt upgrade -y
 RUN apt install -y --no-install-recommends \
     subversion g++ cmake xterm libfltk1.3-dev freeglut3-dev libpng-dev libjpeg-dev libxft-dev libxinerama-dev libtiff5-dev \
-    protobuf-compiler libb64-dev ros-humble-diagnostic-updater lsb-release wget gnupg 
+    protobuf-compiler libb64-dev ros-humble-diagnostic-updater lsb-release wget gnupg libprotobuf-dev
 
 # Clone and set up AllSeaingVehicle2 and moos-ivp
 RUN git clone https://github.com/ArcturusNavigation/AllSeaingVehicle2.git
@@ -43,12 +44,13 @@ RUN export PATH=/moos-ivp/bin:$PATH && \
     export PATH=/moos-ivp-arcturus/bin:$PATH \
     export PATH=/moos-ivp-arcturus/scripts:$PATH
 RUN cd moos-ivp && ./build-moos.sh && ./build-ivp.sh
+RUN cd ../AllSeaingVehicle2 \
+&& git submodule update --init --recursive src/robot_localization \
+&& rosdep install --from-paths src --ignore-src -r -y --rosdistro humble \
+&& protoc --cpp_out=./src/protobuf_client_ros2/include/protobuf_client ./src/protobuf_client_ros2/include/protobuf_client/gateway.proto \
+&& source /opt/ros/humble/setup.bash \
+&& colcon build --merge-install
 RUN cd ../moos-ivp-arcturus && ./build.sh
-RUN cd ../AllSeaingVehicle2
-RUN git submodule update --init --recursive src/robot_localization
-RUN rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
-RUN protoc --cpp_out=./src/protobuf_client_ros2/include/protobuf_client ./src/protobuf_client_ros2/include/protobuf_client/gateway.proto
-RUN colcon build --merge-install
 
 # Copy over script to Docker container
 COPY ./run_my_system.bash /
