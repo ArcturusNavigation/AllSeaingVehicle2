@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import rclpy
-from rclpy.node import Node
 
 from geometry_msgs.msg import PoseStamped
+from vrx_2023.task_node import TaskNode
 from protobuf_client_interfaces.msg import Gateway
 
-class WildlifeSimple(Node):
+class WildlifeSimple(TaskNode):
 
     def __init__(self):
         super().__init__('stationkeeping')
@@ -30,8 +30,9 @@ class WildlifeSimple(Node):
         waypt_msg = Gateway()
         waypt_msg.gateway_key = "ANIMAL_GPS"
         waypt_msg.gateway_string = f"id={num},animal={msg.header.frame_id},lat={msg.pose.position.x},lon={msg.pose.position.y}"
-        self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
-        self.publisher.publish(waypt_msg)
+        if self.task_name == "wildlife":
+            self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
+            self.publisher.publish(waypt_msg)
 
 def main(args=None):
     rclpy.init(args=args)

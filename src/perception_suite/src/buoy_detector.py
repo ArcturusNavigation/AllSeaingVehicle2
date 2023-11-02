@@ -2,12 +2,12 @@
 import rclpy
 import cv_bridge 
 import cv2
-from perception_suite.msg import LabeledBoundingBox2D, LabeledBoundingBox2DArray
+from asv_interfaces.msg import LabeledBoundingBox2D, LabeledBoundingBox2DArray
 from sensor_msgs.msg import Image
 from std_msgs.msg import Float64
 from std_msgs.msg import Float32MultiArray
-from utility.geometry import Vec2D
-from utility.constants import BUOY_CLASSES, IMG_WIDTH, IMG_HEIGHT, ZED_FOV
+from utility.geometry import Vec2D # TODO: Perhaps reimplement Vec2D
+from utility.constants import BUOY_CLASSES, IMG_WIDTH, IMG_HEIGHT # TODO: CHANGE TO PARAMETERS
 
 from rclpy.node import Node
 

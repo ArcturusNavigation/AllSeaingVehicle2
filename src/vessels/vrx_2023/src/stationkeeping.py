@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import rclpy
-from rclpy.node import Node
 
 from geometry_msgs.msg import PoseStamped
 from protobuf_client_interfaces.msg import Gateway
+from vrx_2023.task_node import TaskNode
 
-class StationKeeping(Node):
+class StationKeeping(TaskNode):
 
     def __init__(self):
         super().__init__('stationkeeping')
@@ -20,8 +20,9 @@ class StationKeeping(Node):
         waypt_msg = Gateway()
         waypt_msg.gateway_key = "WPT_UPDATE_GPS"
         waypt_msg.gateway_string = f"{msg.pose.position.x},{msg.pose.position.y}"
-        self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
-        self.publisher.publish(waypt_msg)
+        if self.task_name == "stationkeeping":
+            self.get_logger().info('Publishing: "%s"' % waypt_msg.gateway_string)
+            self.publisher.publish(waypt_msg)
 
 def main(args=None):
     rclpy.init(args=args)

@@ -15,8 +15,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(protobuf_client_interfaces REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(ros_gz_interfaces REQUIRED)
-
-ament_python_install_package(${PROJECT_NAME})
+find_package(asv_interfaces REQUIRED)
 
 # install the launch and params directory
 install(DIRECTORY
@@ -25,8 +24,12 @@ install(DIRECTORY
     resource
     DESTINATION share/${PROJECT_NAME}/)
 
+ament_python_install_package(${PROJECT_NAME})
+
 install(PROGRAMS
+    src/task_sender.py
     src/waypoints.py
+    src/acoustic_wpt_sender.py
     src/stationkeeping.py
     src/wildlife_simple.py
     src/acoustic_tracking_sub.py
