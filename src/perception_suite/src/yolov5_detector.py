@@ -1,7 +1,11 @@
+#!/usr/bin/env python3
 """
 References:
 https://pytorch.org/hub/ultralytics_yolov5/
 https://pypi.org/project/yolo5/
+
+List of classes:
+https://github.com/ultralytics/yolov5/blob/master/data/coco.yaml
 """
 
 import getpass
@@ -13,6 +17,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile
 from sensor_msgs.msg import Image
 from asv_interfaces.msg import LabeledBoundingBox2D, LabeledBoundingBox2DArray
+from ament_index_python.packages import get_package_share_directory
 
 class Yolov5Detector(Node):
 
@@ -23,7 +28,7 @@ class Yolov5Detector(Node):
 
         # Get pretrained yolov5 models for colored buoys and cardinal markers
         path_hubconfig = f"/home/{getpass.getuser()}/yolov5"
-        path_model = self.get_package_share_directory("perception_suite") + "/models/NJORD_WEIGHTS_ALL.pt"
+        path_model = get_package_share_directory("perception_suite") + "/models/yolov5s.pt" #TODO: CHANGE THIS TO PARAM
         self.model = torch.hub.load(path_hubconfig, 'custom', path=path_model, source='local')
 
         # Subscribers and publishers
@@ -32,7 +37,7 @@ class Yolov5Detector(Node):
         self.img_pub = self.create_publisher(Image, '/perception_suite/segmented_image', qos_profile)
         self.img_sub = self.create_subscription(
             Image, 
-            '/zed2i/zed_node/rgb/image_rect_color', 
+            '/perception_suite/image', # Remap this to correct topic
             self.img_callback, 
             qos_profile
         )
