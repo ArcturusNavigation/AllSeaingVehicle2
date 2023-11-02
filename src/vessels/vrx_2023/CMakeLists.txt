@@ -21,6 +21,7 @@ find_package(asv_interfaces REQUIRED)
 install(DIRECTORY
     launch
     params
+    resource
     DESTINATION share/${PROJECT_NAME}/)
 
 ament_python_install_package(${PROJECT_NAME})
@@ -33,6 +34,8 @@ install(PROGRAMS
     src/wildlife_simple.py
     src/acoustic_tracking_sub.py
     src/xdrive_controller.py
+    src/pwm_subscriber.py
+    src/sample_publisher.py
     DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
