@@ -73,7 +73,10 @@ class StateReporter : public rclcpp::Node {
         void odom_callback(const nav_msgs::msg::Odometry & msg) {
             //m_state.nav_x = msg.twist.twist.linear.x;
             //m_state.nav_y = msg.twist.twist.linear.y;
-            m_state.nav_speed = sqrt(m_state.nav_x * m_state.nav_x + m_state.nav_y * m_state.nav_y);
+            double vel_x = msg.twist.twist.linear.x;
+            double vel_y = msg.twist.twist.linear.y;
+
+            m_state.nav_speed = sqrt(vel_x * vel_x + vel_y * vel_y);
         }
 
         void local_utm_callback(const geometry_msgs::msg::PointStamped & msg) {
