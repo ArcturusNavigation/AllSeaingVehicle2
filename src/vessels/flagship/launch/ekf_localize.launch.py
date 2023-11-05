@@ -17,10 +17,10 @@ def generate_launch_description():
             parameters=[robot_localization_params]),
         launch_ros.actions.Node(
             package="robot_localization",
-            executable="navsat_transfrom_node",
+            executable="navsat_transform_node",
             name="navsat_transform_node",
             output="screen",
-            remappings=[("/gps/fix", "/mavros/gpsstatus/gps1/raw")],
+            remappings=[("/gps/fix", "/mavros/global_position/global")],
             parameters=[robot_localization_params]),
     ])
 

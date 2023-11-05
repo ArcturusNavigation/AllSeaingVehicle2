@@ -44,7 +44,7 @@ navsat_transform_node:
         broadcast_cartesian_transform: true
         wait_for_datum: true
         use_odometry_yaw: false
-        datum: [-33.7228, 150.6740, 0.0]
+        datum: [42.3599380014875, -71.10459068336837, 0.0]
         yaw_offset: 0.0
         publish_filtered_gps: true
 
