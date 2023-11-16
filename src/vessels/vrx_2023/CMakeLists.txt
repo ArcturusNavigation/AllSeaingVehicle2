@@ -19,23 +19,24 @@ find_package(asv_interfaces REQUIRED)
 
 # install the launch and params directory
 install(DIRECTORY
-    launch
-    params
-    resource
-    DESTINATION share/${PROJECT_NAME}/)
+  launch
+  params
+  resource
+  DESTINATION share/${PROJECT_NAME}/)
 
 ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
-    src/task_sender.py
-    src/waypoints.py
-    src/acoustic_wpt_sender.py
-    src/stationkeeping.py
-    src/wildlife_simple.py
-    src/acoustic_tracking_sub.py
-    src/xdrive_controller.py
-    src/pwm_subscriber.py
-    src/sample_publisher.py
-    DESTINATION lib/${PROJECT_NAME})
+  src/task_sender.py
+  src/waypoints.py
+  src/acoustic_wpt_sender.py
+  src/stationkeeping.py
+  src/wildlife_simple.py
+  src/acoustic_tracking_sub.py
+  src/xdrive_controller.py
+  src/write_bag_to_png.py
+  src/pwm_subscriber.py
+  src/sample_publisher.py
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

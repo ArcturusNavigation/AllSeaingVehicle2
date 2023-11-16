@@ -4,16 +4,12 @@ https://pytorch.org/hub/ultralytics_yolov5/
 https://pypi.org/project/yolo5/
 """
 
-import getpass
-import torch
 import cv_bridge
 import cv2
 import rclpy
 from rclpy.node import Node
 from rclpy.qos import QoSProfile
 from sensor_msgs.msg import Image
-from perception_suite.msg import LabeledBoundingBox2D, LabeledBoundingBox2DArray
-from utility.constants import IMG_WIDTH, IMG_HEIGHT
 import time
 
 class WriteBagToPNG(Node):
@@ -30,7 +26,7 @@ class WriteBagToPNG(Node):
             Image, 
 
             # TODO Change topic to the camera topic thats in the simulator (look at vrx wiki)
-            '/zed2i/zed_node/rgb/image_rect_color', 
+            '/wamv/sensors/cameras/front_right_camera_sensor/image_raw', 
             self.img_callback, 
             qos_profile 
         )
