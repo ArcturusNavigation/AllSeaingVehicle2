@@ -18,18 +18,18 @@ find_package(tf2_sensor_msgs REQUIRED)
 find_package(asv_interfaces REQUIRED)
 
 # Node: pcd_transformer
-add_executable(pcd_transformer
-  src/pcd_transformer.cpp)
-ament_target_dependencies(pcd_transformer
-  rclcpp
-  sensor_msgs
-  geometry_msgs
-  tf2_ros
-  tf2_sensor_msgs)
-
-install(TARGETS
-  pcd_transformer
-  DESTINATION lib/${PROJECT_NAME})
+#add_executable(pcd_transformer
+#  src/pcd_transformer.cpp)
+#ament_target_dependencies(pcd_transformer
+#  rclcpp
+#  sensor_msgs
+#  geometry_msgs
+#  tf2_ros
+#  tf2_sensor_msgs)
+#
+#install(TARGETS
+#  pcd_transformer
+#  DESTINATION lib/${PROJECT_NAME})
 
 # install the launch and params directory
 install(DIRECTORY
@@ -42,7 +42,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   src/yolov5_detector.py
   src/topic_to_image.py
-  src/pointcloud_sub.py
+  #src/pointcloud_sub.py
   src/buoy_detector.py
   DESTINATION lib/${PROJECT_NAME})
 

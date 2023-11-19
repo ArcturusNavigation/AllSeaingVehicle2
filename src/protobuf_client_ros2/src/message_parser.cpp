@@ -25,20 +25,20 @@ class MessageParser : public rclcpp::Node {
         asv_interfaces::msg::MOOSCommand command_msg = asv_interfaces::msg::MOOSCommand();
         geometry_msgs::msg::PointStamped point_msg = geometry_msgs::msg::PointStamped();
 
-        void topic_callback(const protobuf_client_interfaces::msg::Gateway & msg) {
+        void topic_callback(const protobuf_client_interfaces::msg::Gateway::SharedPtr msg) {
             
             // Publish desired rudder and thrust (when DESIRED_THRUST is received)
-            if (msg.gateway_key == "DESIRED_RUDDER") command_msg.desired_rudder = msg.gateway_double;
-            if (msg.gateway_key == "DESIRED_THRUST") {
-                command_msg.desired_thrust = msg.gateway_double;
+            if (msg->gateway_key == "DESIRED_RUDDER") command_msg.desired_rudder = msg->gateway_double;
+            if (msg->gateway_key == "DESIRED_THRUST") {
+                command_msg.desired_thrust = msg->gateway_double;
                 m_command_publisher->publish(command_msg);
             }
 
             // Publisher local utm coordinates (when NAV_Y is received)
-            if (msg.gateway_key == "NAV_X") point_msg.point.x = msg.gateway_double;
-            if (msg.gateway_key == "NAV_Y") {
-                point_msg.header.stamp = msg.gateway_time;
-                point_msg.point.y = msg.gateway_double;
+            if (msg->gateway_key == "NAV_X") point_msg.point.x = msg->gateway_double;
+            if (msg->gateway_key == "NAV_Y") {
+                point_msg.header.stamp = msg->gateway_time;
+                point_msg.point.y = msg->gateway_double;
                 point_msg.point.z = 0;
                 m_coord_publisher->publish(point_msg);
             }

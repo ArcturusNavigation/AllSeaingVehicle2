@@ -7,22 +7,16 @@ sudo apt-get install -y libfltk1.3-dev freeglut3-dev libpng-dev libjpeg-dev
 sudo apt-get install -y libxft-dev libxinerama-dev libtiff5-dev libprotobuf-dev
 
 # Basic ROS package requirements
-sudo apt install -y protobuf-compiler libb64-dev ros-humble-diagnostic-updater lsb-release wget gnupg 
-
-# Install Gazebo Garden
-sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
-sudo apt update
-sudo apt install -y gz-garden python3-sdformat13 ros-humble-ros-gzgarden ros-humble-xacro
+sudo apt install -y protobuf-compiler libb64-dev ros-foxy-diagnostic-updater lsb-release wget gnupg 
 
 # Initialize submodule
-git submodule update --init --recursive src/robot_localization src/vrx
+git submodule update --init --recursive src/robot_localization
 
 # Install dependencies
-rosdep install --from-paths src --ignore-src -r -y --rosdistro humble
+rosdep install --from-paths src --ignore-src -r -y --rosdistro foxy
 
 # Set up Protobuf Gateway
 protoc --cpp_out=./src/protobuf_client_ros2/include/protobuf_client ./src/protobuf_client_ros2/include/protobuf_client/gateway.proto
 
 # Build colcon workspace
-colcon build --merge-install
+colcon build

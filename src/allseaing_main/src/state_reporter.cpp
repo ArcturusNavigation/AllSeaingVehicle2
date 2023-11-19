@@ -56,12 +56,12 @@ class StateReporter : public rclcpp::Node {
 
         asv_interfaces::msg::ASVState m_state = asv_interfaces::msg::ASVState();
 
-        void imu_callback(const sensor_msgs::msg::Imu & msg) {
+        void imu_callback(const sensor_msgs::msg::Imu::SharedPtr msg) {
             tf2::Quaternion q;
-            q.setW(msg.orientation.w);
-            q.setX(msg.orientation.x);
-            q.setY(msg.orientation.y);
-            q.setZ(msg.orientation.z);
+            q.setW(msg->orientation.w);
+            q.setX(msg->orientation.x);
+            q.setY(msg->orientation.y);
+            q.setZ(msg->orientation.z);
             tf2::Matrix3x3 m(q);
             double r, p, y;
             m.getRPY(r, p, y);
@@ -70,23 +70,23 @@ class StateReporter : public rclcpp::Node {
             m_state.nav_heading = -y * 180 / M_PI + 90; // Offset and negative sign due to NED/ENU IMU difference
         }
 
-        void odom_callback(const nav_msgs::msg::Odometry & msg) {
+        void odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg) {
             //m_state.nav_x = msg.twist.twist.linear.x;
             //m_state.nav_y = msg.twist.twist.linear.y;
-            double vel_x = msg.twist.twist.linear.x;
-            double vel_y = msg.twist.twist.linear.y;
+            double vel_x = msg->twist.twist.linear.x;
+            double vel_y = msg->twist.twist.linear.y;
 
             m_state.nav_speed = sqrt(vel_x * vel_x + vel_y * vel_y);
         }
 
-        void local_utm_callback(const geometry_msgs::msg::PointStamped & msg) {
-            m_state.nav_x = msg.point.x;
-            m_state.nav_y = msg.point.y;
+        void local_utm_callback(const geometry_msgs::msg::PointStamped::SharedPtr msg) {
+            m_state.nav_x = msg->point.x;
+            m_state.nav_y = msg->point.y;
         }
 
-        void gps_callback(const sensor_msgs::msg::NavSatFix & msg) {
-            m_state.nav_lat = msg.latitude;
-            m_state.nav_long = msg.longitude;
+        void gps_callback(const sensor_msgs::msg::NavSatFix::SharedPtr msg) {
+            m_state.nav_lat = msg->latitude;
+            m_state.nav_long = msg->longitude;
         }
 
         void timer_callback() {
