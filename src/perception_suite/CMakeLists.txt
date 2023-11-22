@@ -33,7 +33,7 @@ install(TARGETS
 
 # install the launch and params directory
 install(DIRECTORY
-  launch
+    #launch
   models
   DESTINATION share/${PROJECT_NAME}/)
   

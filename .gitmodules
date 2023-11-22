@@ -13,11 +13,11 @@
 	url = https://github.com/SICKAG/msgpack11.git
 [submodule "src/vrx"]
 	path = src/vrx
-	url = git@github.com:ArcturusNavigation/vrx.git
+	url = https://github.com/ArcturusNavigation/vrx.git
 	branch = master
 [submodule "src/robot_localization"]
 	path = src/robot_localization
-	url = git@github.com:cra-ros-pkg/robot_localization.git
+	url = https://github.com/cra-ros-pkg/robot_localization.git
 [submodule "src/vrx-docker"]
 	path = src/vrx-docker
-	url = git@github.com:osrf/vrx-docker
+	url = https://github.com/osrf/vrx-docker
