@@ -11,4 +11,10 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 
+install(PROGRAMS
+    src/pwm_sender.py
+
+    DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
