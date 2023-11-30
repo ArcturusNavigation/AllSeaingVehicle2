@@ -68,7 +68,6 @@ class Controller(Node):
             # print(f"theta error: {theta_diff:3.3f}, theta = {heading:3.3f}, desired = {self.target_heading:3.3f}")
         self.previous_rotation = tn
         tn += self.theta_kp * theta_diff
-        tx, ty, tn = (self.restrict_input(inp) for inp in (tx, ty, tn))
         results = {
             self.back_right_name: (tx - ty) / d + tn / (4 * self.r),
             self.back_left_name: (ty + tx) / d - tn / (4 * self.r),
@@ -77,7 +76,7 @@ class Controller(Node):
         }
         for name in self.all_thruster_names:
             float_msg = Int64()
-            float_msg.data = int(results[name] * self.thrust_factor + self.midpoint)
+            float_msg.data = int(self.restrict_input(results[name]) * self.thrust_factor + self.midpoint)
             self.thrust_publishers[name].publish(float_msg)
 
     def restrict_input(self, input):
