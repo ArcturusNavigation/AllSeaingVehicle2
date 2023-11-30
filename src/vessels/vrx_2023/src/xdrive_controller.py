@@ -13,9 +13,11 @@ class Controller(Node):
         super().__init__("xdrive_controller")
         l = 3.5
         w = 2
-        self.max_output = 1000
+        self.min_output = 1100
+        self.max_output = 1900
         self.max_input = 1.1
-        self.thrust_factor = self.max_output / self.max_input
+        self.thrust_factor = (self.max_output - self.min_output) / (2 * self.max_input)
+        self.midpoint = (self.max_output + self.min_output) / 2
         self.velocities = [0] * 3
         self.target_heading = None
         self.theta_kp = 6.1
@@ -75,7 +77,7 @@ class Controller(Node):
         }
         for name in self.all_thruster_names:
             float_msg = Int64()
-            float_msg.data = int(results[name] * self.thrust_factor)
+            float_msg.data = int(results[name] * self.thrust_factor + self.midpoint)
             self.thrust_publishers[name].publish(float_msg)
 
     def restrict_input(self, input):

@@ -3,7 +3,6 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import Float64MultiArray
-from std_msgs.msg import String
 
 class Pub(Node):
 
