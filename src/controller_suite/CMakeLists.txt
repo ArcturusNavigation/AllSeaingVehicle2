@@ -16,10 +16,20 @@ find_package(asv_interfaces REQUIRED)
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
 
+install(DIRECTORY
+    launch
+    params
+    resource
+    DESTINATION share/${PROJECT_NAME}/)
+
 # Install Python executables
 install(PROGRAMS
   src/simple_controller.py
+  src/xdrive_controller.py
+  src/sample_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
+
+
 
 ament_package()

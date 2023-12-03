@@ -19,6 +19,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/LabeledBoundingBox2DArray.msg"
     "msg/Object.msg"
     "msg/ObjectArray.msg"
+    "msg/ControlMessage.msg"
     DEPENDENCIES std_msgs geometry_msgs builtin_interfaces
 )
 

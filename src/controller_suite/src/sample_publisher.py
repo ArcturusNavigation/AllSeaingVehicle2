@@ -4,6 +4,13 @@ from rclpy.node import Node
 
 from asv_interfaces.msg import ControlMessage
 
+# easy way to publish messages to /control_input with given parameters
+# use --ros-args to specify arguments
+# use vx:=123 to set x velocity relative to boat
+# use vy:=123 to set y velocity relative to boat
+# use angular:=123 to set angular parameter
+# use use_heading:=True to tell the controller whether to use heading or velocity control on angle
+
 class Pub(Node):
 
     def __init__(self):
