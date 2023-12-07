@@ -1,7 +1,9 @@
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, TextSubstitution
+from launch.conditions import IfCondition
 import launch_ros
 import os
 
@@ -11,8 +13,9 @@ def generate_launch_description():
     vrx_gz_prefix = get_package_share_directory("vrx_gz") 
     vrx_2023_prefix = get_package_share_directory("vrx_2023") 
     robot_localization_params = os.path.join(get_package_share_directory("vrx_2023"), "params", "dual_ekf_navsat.yaml")
-
     return LaunchDescription([
+        DeclareLaunchArgument("in_sim", default_value=TextSubstitution(text="False")),
+        DeclareLaunchArgument("with_control", default_value=TextSubstitution(text="True")),
         launch_ros.actions.Node(
 	        package="allseaing_main", 
             executable="state_reporter",
@@ -25,18 +28,19 @@ def generate_launch_description():
             package="robot_localization",
             executable="ekf_node",
             name="ekf_filter_node",
-            output="screen",
             parameters=[robot_localization_params]),
         launch_ros.actions.Node(
             package="robot_localization",
             executable="navsat_transform_node",
             name="navsat_transform_node",
-            output="screen",
             remappings=[("/gps/fix", "/wamv/sensors/gps/gps/fix")],
             parameters=[robot_localization_params]),
         launch_ros.actions.Node(
-            package="vrx_2023",
-            executable="xdrive_controller.py"
+            package="controller_suite",
+            executable="xdrive_controller.py",
+            name="controller",
+            parameters=[{"in_sim": LaunchConfiguration("in_sim")}],
+            condition=IfCondition(LaunchConfiguration("with_control"))
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([vrx_gz_prefix, "/launch/competition.launch.py"]),

@@ -25,12 +25,18 @@ class Controller(Node):
     A simple controller for x-drive. Receives velocities and/or heading as input
     and gives PWM output to thrusters.
     """
-    def __init__(self, in_sim = False):
+    def __init__(self):
         """
-        Initialize the controller. in_sim indicates whether we are running in
-        simulation or not.
+        Initialize the controller.
         """
         super().__init__("xdrive_controller") # initialize ROS2
+
+        self.declare_parameter("in_sim", False)
+        in_sim = bool(self.get_parameter("in_sim").value)
+        
+        self.declare_parameter("debug", False)
+        self.debug_mode = bool(self.get_parameter("debug").value)
+
         l = 3.5 # BOAT LENGTH
         w = 2 # BOAT WIDTH
         self.msg_type = Float64 if in_sim else Int64
@@ -141,8 +147,8 @@ class Controller(Node):
         """
         The main update function that sends output to the thrusters
         """
-        # print(self.actual_theta if self.i.use_heading else self.actual_omega)
-        # ^ uncomment to see how the feedback is working
+        if self.debug_mode:
+            print(self.actual_theta if self.i.use_heading else self.actual_omega)
         current_time = time.time()
         angular_input = 0 if self.i.use_heading else self.i.angular # this represents what we will pass in as angular velocity
         if self.last_imu_data_timestamp is not None and (current_time - self.last_imu_data_timestamp) <= self.required_imu_data_recentness:
@@ -231,8 +237,8 @@ class Controller(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    # initialize the controller, parameter set to True if we are in simulation
-    controller = Controller(True)
+    # initialize the controller
+    controller = Controller()
 
     rclpy.spin(controller)
     rclpy.shutdown()
