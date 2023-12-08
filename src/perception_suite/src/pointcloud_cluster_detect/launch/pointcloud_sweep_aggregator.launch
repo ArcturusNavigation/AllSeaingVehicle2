@@ -1,0 +1,11 @@
+<launch>
+
+  <arg name="segment" default="/broadband_radar/channel_0/segment" />
+
+  <node pkg="pointcloud_cluster_detect" type="pointcloud_sweep_aggregator" name="pointcloud_sweep_aggregator" output="screen" >
+    <param name="segment"
+	   value="$(arg segment)" />
+
+  </node>
+  
+</launch>

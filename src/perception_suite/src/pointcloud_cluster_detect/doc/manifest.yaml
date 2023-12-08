@@ -1,0 +1,26 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- pcl_conversions
+- auvlab_msgs
+- nmea_msgs
+- rospy
+- std_msgs
+- message_runtime
+- sensor_msgs
+- catkin
+- tf
+- geometry_msgs
+- message_generation
+- roscpp
+- pcl_ros
+description: The pointcloud_cluster_detect package
+license: TODO
+maintainers: mikedef <mikedef@todo.todo>
+msgs: []
+package_type: package
+repo_url: ''
+srvs: []
+url: ''

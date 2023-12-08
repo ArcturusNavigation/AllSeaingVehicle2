@@ -1,0 +1,53 @@
+<launch>
+
+  <arg name="pc_topic" default="/velodyne_points" />
+  <arg name="nmea_msg_header" default="PYXOB" />
+  <arg name="filter_cloud" default="false" />
+  <arg name="remove_points" default="0.0" />
+  <arg name="downsampled_cloud" default="false" />
+  <arg name="leaf_size" default="0.5" />
+  <arg name="cluster_size_min" default="20.0" />
+  <arg name="cluster_size_max" default="100000" />
+  <arg name="use_multiple_thres" default="false" />
+  <arg name="clustering_distance" default="1.0" />
+  <arg name="output_frame" default="velodyne" />
+  <arg name="radar" default="false" />
+  <!-- cluster_seg_thresh: distance between clusters to be considered a match -->
+  <arg name="cluster_seg_thresh" default="10.0"/>
+  <!-- drop_cluster_count: sweep count since cluster is last seen before dropping tracked cluster -->
+  <arg name="drop_cluster_count" default="5"/>
+  <arg name="viz" default="false" />
+  <arg name="filter_camera_view" default="false"/>
+  <arg name="camera_hfov" default="0"/>
+  <arg name="camera_theta" default="0.0"/>
+
+  <node pkg="pointcloud_cluster_detect" type="pointcloud_euclidean_cluster_detect" name="pointcloud_euclidean_cluster_detect" output="screen" >
+    <param name="pc_topic"
+	   value="$(arg pc_topic)"/> <!-- used to select pointcloud topic -->
+    <!-- sensor type for nema message header; Lidar:"$PYLOB", Radar:"$PYROB" -->
+    <!--
+    <param name="nmea_msg_header" value="$(arg nmea_msg_header)"/> 
+    <param name="filter_cloud" value="$(arg filter_cloud)" />
+    <param name="remove_points" value="$(arg remove_points)" />
+    <param name="leaf_size" value="$(arg leaf_size)" />
+    <param name="downsampled_cloud" value="$(arg downsampled_cloud)" />
+    <param name="cluster_size_min" value="$(arg cluster_size_min)" />
+    <param name="cluster_size_max" value="$(arg cluster_size_max)" />
+    <param name="use_multiple_thres" value="$(arg use_multiple_thres)" />
+    <param name="clustering_distance" value="$(arg clustering_distance)" />
+    <param name="output_frame" value="$(arg output_frame)" />
+    <param name="cluster_seg_thresh" value="$(arg cluster_seg_thresh)" />
+    <param name="drop_cluster_count" value="$(arg drop_cluster_count)" />
+    <param name="viz" value="$(arg viz)" />
+    <param name="filter_camera_view" value="$(arg filter_camera_view)"/>
+    <param name="camera_hfov" value="$(arg camera_hfov)"/>
+    <param name="camera_theta" value="$(arg camera_theta)"/>
+    -->
+  </node>
+
+  <group if="$(arg radar)" >
+    <node pkg="pointcloud_cluster_detect" type="pointcloud_sweep_aggregator" name="pointcloud_sweep_aggregator" output="screen" >
+    </node>
+  </group>
+  
+</launch>
