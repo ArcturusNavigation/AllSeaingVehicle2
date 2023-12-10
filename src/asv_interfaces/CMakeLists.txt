@@ -20,6 +20,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     "msg/Object.msg"
     "msg/ObjectArray.msg"
     "msg/ControlMessage.msg"
+    "msg/GoalState.msg"
     DEPENDENCIES std_msgs geometry_msgs builtin_interfaces
 )
 
