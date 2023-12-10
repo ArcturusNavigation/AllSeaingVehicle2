@@ -11,8 +11,8 @@ import os
 
 def generate_launch_description():
     vrx_gz_prefix = get_package_share_directory("vrx_gz") 
-    vrx_2023_prefix = get_package_share_directory("vrx_2023") 
-    robot_localization_params = os.path.join(get_package_share_directory("vrx_2023"), "params", "dual_ekf_navsat.yaml")
+    controller_suite_prefix = get_package_share_directory("controller_suite") 
+    robot_localization_params = os.path.join(get_package_share_directory("controller_suite"), "params", "dual_ekf_navsat.yaml")
     return LaunchDescription([
         DeclareLaunchArgument("in_sim", default_value=TextSubstitution(text="False")),
         DeclareLaunchArgument("with_control", default_value=TextSubstitution(text="True")),
@@ -44,6 +44,6 @@ def generate_launch_description():
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([vrx_gz_prefix, "/launch/competition.launch.py"]),
-            launch_arguments = {"world": "sydney_regatta", "urdf": f"{vrx_2023_prefix}/resource/wamv_target.urdf"}.items()),
+            launch_arguments = {"world": "sydney_regatta", "urdf": f"{controller_suite_prefix}/resource/wamv_target.urdf"}.items()),
     ])
 
