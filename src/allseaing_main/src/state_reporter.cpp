@@ -65,17 +65,14 @@ class StateReporter : public rclcpp::Node {
             tf2::Matrix3x3 m(q);
             double r, p, y;
             m.getRPY(r, p, y);
-            //std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
+            std::cout << "Roll: " << r << ", Pitch: " << p << ", Yaw: " << y << std::endl;
             // TODO: make NED/ENU IMU difference a ROSParam
             m_state.nav_heading = -y * 180 / M_PI + 90; // Offset and negative sign due to NED/ENU IMU difference
         }
 
         void odom_callback(const nav_msgs::msg::Odometry & msg) {
-            //m_state.nav_x = msg.twist.twist.linear.x;
-            //m_state.nav_y = msg.twist.twist.linear.y;
             double vel_x = msg.twist.twist.linear.x;
             double vel_y = msg.twist.twist.linear.y;
-
             m_state.nav_speed = sqrt(vel_x * vel_x + vel_y * vel_y);
         }
 

@@ -18,6 +18,3 @@
 [submodule "src/robot_localization"]
 	path = src/robot_localization
 	url = https://github.com/cra-ros-pkg/robot_localization.git
-[submodule "src/vrx-docker"]
-	path = src/vrx-docker
-	url = https://github.com/osrf/vrx-docker

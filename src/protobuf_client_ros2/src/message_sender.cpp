@@ -7,7 +7,7 @@ using namespace std::chrono_literals;
 
 class MessageSender : public rclcpp::Node {
     public:
-        MessageSender() : Node("message_parser") {
+        MessageSender() : Node("message_sender") {
             m_state_sub = this->create_subscription<asv_interfaces::msg::ASVState>(
                 "/allseaing_main/state",
                 10,
