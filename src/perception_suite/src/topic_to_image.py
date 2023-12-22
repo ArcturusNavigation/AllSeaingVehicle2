@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 import rclpy 
 from rclpy.node import Node
-from sensor_msgs.msg import PointCloud2
-from perception_suite.pcl_utils import *
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 bridge = CvBridge()
-class PCDListener(Node):
+
+class TopicToImage(Node):
 
     def __init__(self):
         super().__init__('image_listener')
@@ -25,9 +24,9 @@ class PCDListener(Node):
 
 def main(args=None):
     rclpy.init(args=args) 
-    pcd_listener = PCDListener()
-    rclpy.spin(pcd_listener)
-    pcd_listener.destroy_node()
+    node = TopicToImage()
+    rclpy.spin(node )
+    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':

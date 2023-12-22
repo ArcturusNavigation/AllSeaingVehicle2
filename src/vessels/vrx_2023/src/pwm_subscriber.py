@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-
-from geometry_msgs.msg import PoseArray
 from std_msgs.msg import Float64
 
 class PWMSubscriber(Node):
